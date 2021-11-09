@@ -13,7 +13,21 @@
       <img class="img-second" src="../assets/img/image2.png" alt="">
     </div>
   </main>
+  <section class="section">
+      <h2 class="sub-heading">
+          Посуда HERMÈS
+      </h2>
+      <MainSwiper/>
+  </section>
 </template>
+<script>
+import MainSwiper from './MainSwiper.vue'
+export default {
+    components: {
+        MainSwiper,
+    }
+}
+</script>
 
 <style scoped>
   .main-heading {
