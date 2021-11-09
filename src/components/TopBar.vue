@@ -1,5 +1,5 @@
 <template>
-  <div class="header-top">
+  <div class="header-top" @scroll="console.log(1)">
     <div class="header-contacts">
       <div class="contact-icons">
         <div class="icon">
