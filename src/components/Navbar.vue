@@ -6,7 +6,34 @@
         <img src="../assets/img/logo.png" alt="" />
       </div>
       <div class="header-menu">
-        <a href="#" class="menu-link" @click="isOpen = !isOpen">
+        <a v-if="isOpen" href="#" class="menu-link" @click="openBar">
+          <svg
+            width="35"
+            height="34"
+            viewBox="0 0 35 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="8.90413"
+              y1="8.52493"
+              x2="25.6897"
+              y2="25.3105"
+              stroke="black"
+              stroke-width="2"
+            />
+            <line
+              x1="9.16838"
+              y1="25.3105"
+              x2="25.9539"
+              y2="8.52494"
+              stroke="black"
+              stroke-width="2"
+            />
+          </svg>
+           Меню
+        </a>
+        <a v-if="!isOpen" href="#" class="menu-link" @click="openBar">
           <svg
             width="22"
             height="16"
@@ -42,7 +69,7 @@
 
           Меню
         </a>
-        <Sidebar :isOpen="isOpen"/>
+        <Sidebar :isOpen="isOpen" @opened="openBar" />
       </div>
       <nav class="header-nav">
         <ul class="nav-list">
@@ -81,7 +108,7 @@
 
 <script>
 import TopBar from "./TopBar.vue";
-import Sidebar from './Sidebar.vue';
+import Sidebar from "./Sidebar.vue";
 export default {
   components: {
     TopBar,
@@ -90,8 +117,13 @@ export default {
   data() {
     return {
       isOpen: false,
-    }
-  }
+    };
+  },
+  methods: {
+    openBar() {
+      return (this.isOpen = !this.isOpen);
+    },
+  },
 };
 </script>
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isOpen" class="shadow"></div>
+  <div v-if="isOpen" class="shadow"  @click="closeSubOnShadowClick()"></div>
   <div v-if="isOpen" class="sidebar">
     <ul>
       <li class="sidebar-item" v-for="cat of cats" :key="cat.id">
@@ -32,6 +32,7 @@ export default {
   props: {
     isOpen: Boolean,
   },
+  emits: ['opened'],
   data() {
     return {
       openedSub: null,
@@ -87,6 +88,10 @@ export default {
     closeSub() {
       return (this.openedSub = null);
     },
+    closeSubOnShadowClick() {
+        console.log(1);
+        this.$emit('opened');
+    }
   },
 };
 </script>
@@ -101,6 +106,7 @@ export default {
   opacity: 0.7;
   left: 0;
   top: 40px;
+  cursor: pointer;
 }
 .cat-link {
   display: flex;
