@@ -2,11 +2,11 @@
   <header class="header">
     <TopBar />
     <div class="header-bottom">
-       <div class="header-logo">
-         <img src="../assets/img/logo.png" alt="">
-        </div> 
+      <div class="header-logo">
+        <img src="../assets/img/logo.png" alt="" />
+      </div>
       <div class="header-menu">
-        <a href="" class="menu-link">
+        <a href="#" class="menu-link">
           <svg
             width="22"
             height="16"
@@ -70,9 +70,7 @@
                 fill="black"
               />
             </svg>
-            <sup>
-                (0)
-            </sup>
+            <sup> (0) </sup>
           </a>
         </div>
       </div>
@@ -90,9 +88,10 @@ export default {
 </script>
 <style scoped>
 .header {
-    top: 0;
-    position: sticky;
-    z-index: 2;
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  box-shadow: 4px 17px 8px 0px rgba(34, 60, 80, 0.2);
 }
 .header-bottom {
   padding: 0 40px;
@@ -103,10 +102,10 @@ export default {
   background-color: #fff;
 }
 .header-logo {
-    position: absolute;
-    left: 20%;
-    bottom: -10px;
-    z-index: 1;
+  position: absolute;
+  left: 20%;
+  bottom: -10px;
+  z-index: 1;
 }
 .menu-link {
   display: flex;
@@ -120,26 +119,26 @@ export default {
   margin-right: 10px;
 }
 .header-nav {
-    flex-basis: 50%;
+  flex-basis: 50%;
 }
 .nav-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .list-item {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 .header-menu {
-    flex-basis: 25%;
+  flex-basis: 25%;
 }
 .header-bucket {
-    display: flex;
-    flex-basis: 25%;
-    align-items: center;
-    justify-content: flex-end;
+  display: flex;
+  flex-basis: 25%;
+  align-items: center;
+  justify-content: flex-end;
 }
 .bucket-icon {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 </style>

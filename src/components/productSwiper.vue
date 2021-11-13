@@ -7,23 +7,13 @@
       :navigation="{ nextEl: '.next', prevEl: '.prev' }"
       :spaceBetween="100"
     >
-      <swiper-slide v-for="image in imageData" :key="image.id">
-        <div class="img-container">
-          <div class="mask"></div>
-          <img class="slide-img" :src="image.url" alt="" />
-        </div>
-        <div class="slide-description">
-          <h4 class="slide-heading">Mosaique au 24</h4>
-          <p class="description">
-            Ещё один безумно красивый сервиз от Hermes — Mosaique au 24,
-            выполнен в роскошных золотых и платиновых оттенках. Такой сервиз не
-            стыдно подать на стол на любое торжество, им останется довольна даже
-            самая притязательная аудитория. Этот изысканный фарфор украсит любой
-            стол, а великолепные тарелки, также можно использовать в качестве
-            украшения интерьера.
-          </p>
-          <a href="#" class="cat-link link">Перейти в каталог</a>
-        </div>
+      <swiper-slide v-for="product in products" :key="product.id">
+        <ProductCart
+          :name="product.name"
+          :img="product.url"
+          :description="product.description"
+          :isSlider="true"
+        />
       </swiper-slide>
       <div class="arrows">
         <div class="next">
@@ -76,19 +66,58 @@ import SwiperCore, { Navigation, Parallax } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
+import ProductCart from "./productCart.vue";
 SwiperCore.use([Navigation, Parallax]);
 export default {
   props: {
     ContainerClass: String,
-    imageData: Array,
   },
   components: {
     Swiper,
     SwiperSlide,
+    ProductCart,
   },
   data() {
     return {
       parallaxObjectWidth: 0,
+      products: [
+        {
+          id: 1,
+          name: "Hermès Apple Watch 6",
+          description:
+            "С хромированным корпусом и одинарным ремешком цвета FEU в коже Epsom",
+          price: "230$",
+          is: true,
+          url: require("../assets/img/products/watch/watch1.png"),
+        },
+        {
+          id: 2,
+          name: "Hermès Apple Watch 6",
+          description:
+            "С хромированным корпусом и одинарным ремешком цвета FEU в коже Epsom",
+          price: "230$",
+          is: true,
+          url: require("../assets/img/products/watch/watch2.png"),
+        },
+        {
+          id: 3,
+          name: "Hermès Apple Watch 6",
+          description:
+            "С хромированным корпусом и одинарным ремешком цвета FEU в коже Epsom",
+          price: "230$",
+          is: true,
+          url: require("../assets/img/products/watch/watch1.png"),
+        },
+        {
+          id: 4,
+          name: "Hermès Apple Watch 6",
+          description:
+            "С хромированным корпусом и одинарным ремешком цвета FEU в коже Epsom",
+          price: "230$",
+          is: true,
+          url: require("../assets/img/products/watch/watch3.png"),
+        },
+      ],
     };
   },
 };

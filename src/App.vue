@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <MainScreen/>
+  <MainScreen />
 </template>
 
 <script>

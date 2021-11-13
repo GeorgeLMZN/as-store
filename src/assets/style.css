@@ -167,3 +167,28 @@ h5 {
 .swiper-slide .img-container .slide-img {
   width: 100%;
 }
+
+.same-middle .swiper-slide.swiper-slide-active {
+  transform: scale(0.75);
+  transition: transform 0.5s;
+}
+.same-middle .swiper-container {
+  padding-top: 0;
+}
+.same-middle .swiper-container .arrows {
+    margin-top: -200px; 
+    position: relative;
+    z-index: 1;
+}
+
+.same-middle .swiper-slide.swiper-slide-active .row.hidden {
+    visibility: visible;
+}
+.sub-p {
+  margin: 10px 0;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}

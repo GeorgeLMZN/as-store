@@ -1,5 +1,5 @@
 <template>
-  <li class="product-item">
+  <li class="product-item" :class="{ mb: isPopular }">
     <div class="row like">
       <div class="favourites-btn">
         <svg
@@ -39,23 +39,23 @@
       </div>
     </div>
     <div class="row image">
-        <img class="product-image" src="../assets/img/products/product1.png" alt="">
+      <img class="product-image" :src="img" alt="" />
     </div>
-    <div class="row">
-        <h4 class="product-name">
-            Чайный набор для завтрака Passifolia 
-        </h4>
-        <p class="product-description">
-            2 чашки 370 мл + 2 блюдца
-        </p>
+    <div class="row" :class="{ hidden: isSlider }">
+      <h4 class="product-name">
+        {{ name }}
+      </h4>
+      <p class="product-description">
+        {{ description }}
+      </p>
     </div>
-    <div class="row price">
-        <p class="old-price">360 € </p>
-        <p class="new-price">260 € </p>
+    <div class="row price" :class="{ hidden: isSlider }">
+      <p class="old-price">360 €</p>
+      <p class="new-price">260 €</p>
     </div>
-    <div class="row order">
-        <button class="main-btn">Заказать</button>
-        <span class="availibility">Под заказ</span>
+    <div class="row order" :class="{ hidden: isSlider }">
+      <button class="main-btn">Заказать</button>
+      <span class="availibility">Под заказ</span>
     </div>
   </li>
 </template>
@@ -66,86 +66,97 @@ export default {
     img: String,
     name: String,
     description: String,
+    isSlider: Boolean,
+    isPopular: Boolean,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-    .product-item {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
-        max-width: 250px;
-    }
-    .product-name {
-        font-size: 18px;
-    }
-    .like {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-    }
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  max-width: 250px;
+}
+.product-name {
+  font-size: 18px;
+}
+.like {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
 
-    .image {
-        align-self: center;
-    }
-    .product-image {
-        align-self: center;
-    }
+.image {
+  align-self: center;
+}
+.product-image {
+  align-self: center;
+}
 
-    .price {
-        font-weight: 600;
-        margin: 5px 0;
-    }
-    .old-price {
-        color: #c7c7c7;
-        position: relative;
-        font-size: 14px;
-        margin: 5px 0;
-    }
+.price {
+  font-weight: 600;
+  margin: 5px 0;
+}
+.old-price {
+  color: #c7c7c7;
+  position: relative;
+  font-size: 14px;
+  margin: 5px 0;
+}
 
-    .new-price {
-        background: #fff;
-        padding-right: 3px;
-    }
+.new-price {
+  background: #fff;
+  padding-right: 3px;
+}
 
-    .product-description {
-        margin: 10px 0;
-    }
-    .new-price::before {
-        content: "";
-        width: 100%;
-        height: 1px;
-        background: #c7c7c7;
-        position: absolute;
-        margin-top: 10px;
-        right: 0;
-        transform: translateY(-50%);
-         z-index: -1;
-    }
-    .old-price::before {
-        content: "";
-        width: 110%;
-        height: 1px;
-        background: #c7c7c7;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
+.product-description {
+  margin: 10px 0;
+}
+.new-price::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #c7c7c7;
+  position: absolute;
+  margin-top: 10px;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.old-price::before {
+  content: "";
+  width: 110%;
+  height: 1px;
+  background: #c7c7c7;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-    .order {
-        margin-top: 15px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .main-btn {
-            margin-top: 0;
-        }
-    }
-    .availibility {
-        font-size: 11px;
-        font-weight: 600;
-    }
+.order {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .main-btn {
+    margin-top: 0;
+  }
+}
+.availibility {
+  font-size: 11px;
+  font-weight: 600;
+}
+.hidden {
+  visibility: hidden;
+}
+.favourites-btn svg {
+  cursor: pointer;
+}
+.mb {
+  margin-bottom: 100px;
+}
 </style>
