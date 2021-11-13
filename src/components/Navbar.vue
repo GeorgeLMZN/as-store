@@ -6,7 +6,7 @@
         <img src="../assets/img/logo.png" alt="" />
       </div>
       <div class="header-menu">
-        <a href="#" class="menu-link">
+        <a href="#" class="menu-link" @click="isOpen = !isOpen">
           <svg
             width="22"
             height="16"
@@ -42,6 +42,7 @@
 
           Меню
         </a>
+        <Sidebar :isOpen="isOpen"/>
       </div>
       <nav class="header-nav">
         <ul class="nav-list">
@@ -80,10 +81,17 @@
 
 <script>
 import TopBar from "./TopBar.vue";
+import Sidebar from './Sidebar.vue';
 export default {
   components: {
     TopBar,
+    Sidebar,
   },
+  data() {
+    return {
+      isOpen: false,
+    }
+  }
 };
 </script>
 <style scoped>
@@ -114,6 +122,8 @@ export default {
   font-family: "Montserrat";
   font-weight: 600;
   text-decoration: none;
+  position: relative;
+  z-index: 4;
 }
 .menu-link svg {
   margin-right: 10px;
@@ -131,6 +141,7 @@ export default {
 }
 .header-menu {
   flex-basis: 25%;
+  position: relative;
 }
 .header-bucket {
   display: flex;

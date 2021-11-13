@@ -523,10 +523,13 @@ export default {
 .main-heading {
   font-family: "Raleway";
   font-size: 55px;
+  font-weight: 600;
+  margin-top: 50px;
 }
 .main-par {
   font-family: "Montserrat";
   font-size: 26px;
+  margin: 30px 0;
 }
 .main-screen {
   display: flex;
