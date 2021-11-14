@@ -153,7 +153,7 @@
       </div>
     </div>
   </section>
-  <section class="section">
+  <section class="section watch-section">
     <productSwiper class="same-middle" />
   </section>
   <section class="section">
@@ -203,45 +203,17 @@
   </section>
   <section class="section">
     <div class="container">
-      <h2 class="sub-heading big-heading">Instagram</h2>
-      <div class="content-box">
-        <div class="img-block">
-          <div class="img-item">
-            <img src="../assets/img/instagram/photo1.jpg" />
-          </div>
-          <div class="img-item">
-            <img src="../assets/img/instagram/photo2.jpg" />
-          </div>
-          <div class="img-item">
-            <img src="../assets/img/instagram/photo3.jpg" />
-          </div>
-          <div class="img-item">
-            <img src="../assets/img/instagram/photo4.jpg" />
-          </div>
-          <div class="img-item">
-            <img src="../assets/img/instagram/photo5.jpg" />
-          </div>
-          <div class="img-item">
-            <img src="../assets/img/instagram/photo5.jpg" />
-          </div>
-        </div>
-        <div class="info-block">
-          <Description
-            text="Подпишитесь на наш Instagram Alex & Sandra Hermes Buyers и получайте бонусы и скидки до 15%"
-            btnText="Подписаться"
-          />
-        </div>
-      </div>
+        <InstagramComponent/>
     </div>
   </section>
-  <FooterComponent/>
 </template>
 <script>
-import MainSwiper from "./MainSwiper.vue";
-import productCart from "./productCart.vue";
-import Description from "./DescriptionBlock.vue";
-import productSwiper from "./productSwiper.vue";
-import FooterComponent from "./FooterComponent.vue";
+import MainSwiper from "../components/MainSwiper.vue";
+import productCart from "../components/productCart.vue";
+import Description from "../components/DescriptionBlock.vue";
+import productSwiper from "../components/productSwiper.vue";
+import InstagramComponent from "../components/Instagram.vue";
+
 
 export default {
   components: {
@@ -249,7 +221,7 @@ export default {
     MainSwiper,
     productCart,
     Description,
-    FooterComponent,
+    InstagramComponent,
   },
   data() {
     return {
@@ -461,6 +433,9 @@ export default {
 </script>
 
 <style scoped>
+.watch-section {
+  padding-top: 0;
+}
 .info-block {
   position: absolute;
   top: -20px;

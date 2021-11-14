@@ -1,28 +1,32 @@
 <template>
   <div :class="ContainerClass">
     <swiper
-      :slides-per-view="4"
+      :slides-per-view="3"
       :centeredSlides="true"
       :loop="true"
       :navigation="{ nextEl: '.next', prevEl: '.prev' }"
       :spaceBetween="100"
     >
-      <swiper-slide v-for="image in imageData" :key="image.id">
-        <div class="img-container">
-          <div class="mask"></div>
-          <img class="slide-img" :src="image.url" alt="" />
+      <swiper-slide v-for="image in this.imageData" :key="image.id">
+        <div class="slide-head">
+          <img :src="image.profileUrl" alt="" />
+          <div class="head-info">
+            <span>{{ image.profileName }}</span>
+            <h4>{{ image.name }}</h4>
+          </div>
         </div>
-        <div class="slide-description">
-          <h4 class="slide-heading">Mosaique au 24</h4>
+        <div class="img-wrapper hidden">
+          <img class="slide-img" :src="image.imageUrl" alt="" />
+        </div>
+        <div class="feedback-description">
           <p class="description">
-            Ещё один безумно красивый сервиз от Hermes — Mosaique au 24,
-            выполнен в роскошных золотых и платиновых оттенках. Такой сервиз не
-            стыдно подать на стол на любое торжество, им останется довольна даже
-            самая притязательная аудитория. Этот изысканный фарфор украсит любой
-            стол, а великолепные тарелки, также можно использовать в качестве
-            украшения интерьера.
+            KELLY или BIRKIN?
+            Думаю, что каждая модница вне зависимости от
+            предпочтений и стиля мечтает обладать такой классикой :)
+            Если вы
+            знакомы немного с процессом покупки сумки...
           </p>
-          <a href="#" class="cat-link link">Перейти в каталог</a>
+          <a href="#" class="cat-link link">Читать в инстраграм</a>
         </div>
       </swiper-slide>
       <div class="arrows">
@@ -87,13 +91,43 @@ export default {
     SwiperSlide,
   },
   data() {
-    return {
-      parallaxObjectWidth: 0,
-    };
+    return {};
   },
 };
 </script>
 <style lang="scss" scoped>
+.description {
+  padding: 20px 0;
+}
+.cat-link {
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.arrows {
+  margin-top: -150px;
+}
+.img-wrapper {
+  display: flex;
+  width: 100%;
+}
+.img-wrapper img {
+  width: 100%;
+}
+.swiper-slide {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.slide-head {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.head-info {
+  margin-left: 10px;
+}
 .swiper-container {
   padding: 100px 0;
 }

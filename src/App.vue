@@ -1,15 +1,16 @@
 <template>
   <Navbar />
-  <MainScreen />
+  <router-view></router-view>
+  <FooterComponent />
 </template>
 
 <script>
+import FooterComponent from "./components/FooterComponent.vue";
 import Navbar from "./components/Navbar.vue";
-import MainScreen from "./components/MainScreen.vue";
 export default {
   components: {
     Navbar,
-    MainScreen,
+    FooterComponent,
   },
 };
 </script>

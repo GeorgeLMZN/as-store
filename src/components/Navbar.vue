@@ -31,7 +31,7 @@
               stroke-width="2"
             />
           </svg>
-           Меню
+          Меню
         </a>
         <a v-if="!isOpen" href="#" class="menu-link" @click="openBar">
           <svg
@@ -73,9 +73,15 @@
       </div>
       <nav class="header-nav">
         <ul class="nav-list">
-          <li class="list-item">О нас</li>
-          <li class="list-item">Контакты</li>
-          <li class="list-item">Экспертиза</li>
+          <li class="list-item">
+            <router-link to="/About"> О нас</router-link>
+          </li>
+          <li class="list-item">
+            <router-link to="/Contacts">Контакты</router-link>
+          </li>
+          <li class="list-item">
+            <router-link to="/">Экспертиза</router-link>
+          </li>
         </ul>
       </nav>
       <div class="header-bucket">

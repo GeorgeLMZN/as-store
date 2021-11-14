@@ -123,6 +123,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.swiper-container {
+  padding: 100px 0;
+}
 .cat-link {
   text-decoration: underline;
   color: #c7c7c7;

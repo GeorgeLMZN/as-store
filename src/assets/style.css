@@ -184,6 +184,33 @@ h5 {
 .same-middle .swiper-slide.swiper-slide-active .row.hidden {
     visibility: visible;
 }
+
+.feedback-swiper .swiper-slide.swiper-slide .img-wrapper {
+        display: none;
+}
+.feedback-swiper .swiper-slide.swiper-slide-active .img-wrapper {
+    display: flex;
+}
+.feedback-swiper .swiper-slide.swiper-slide-active  {
+  transform: scale(1);
+}
+
+.feedback-swiper .swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+.feedback-swiper .swiper-slide {
+  padding: 30px;
+  box-sizing: border-box;
+  border: 1px solid #c7c7c7;
+}
+
+
+.feedback-swiper .description {
+  padding: 20px 0;
+}
+
+
 .sub-p {
   margin: 10px 0;
 }
