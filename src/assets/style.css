@@ -206,9 +206,6 @@ h5 {
 }
 
 
-.feedback-swiper .description {
-  padding: 20px 0;
-}
 
 
 .sub-p {
@@ -218,4 +215,11 @@ h5 {
 .d-flex {
   display: flex;
   align-items: center;
+}
+
+.main-btn.black {
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  background: #000;
 }

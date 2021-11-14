@@ -72,6 +72,9 @@
 </template>
 
 <style lang="css" scoped>
+.footer {
+  padding-top: 50px;
+}
 footer a {
     font-size: 14px;
     font-weight: 600;

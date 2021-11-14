@@ -91,7 +91,7 @@
           <a href="" class="eur">EUR</a>
         </div>
         <div class="bucket-icon">
-          <a href="#" class="icon-link">
+          <router-link to="/bucket" class="icon-link">
             <svg
               width="15"
               height="20"
@@ -105,7 +105,7 @@
               />
             </svg>
             <sup> (0) </sup>
-          </a>
+          </router-link>
         </div>
       </div>
     </div>
